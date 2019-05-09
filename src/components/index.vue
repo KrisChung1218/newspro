@@ -55,16 +55,16 @@
                     </p>
                 </div>
             </router-link>
-            <a href="https://user.qzone.qq.com/903575343/334">
+            <router-link :to="{name:'toutiaoNews'}">
                 <div class="center">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-liuyanjianyi"></use>
                     </svg>
                     <p class="weui_grid_label">
-                        留言反馈
+                        头条新闻
                     </p>
                 </div>
-            </a>
+            </router-link>
             <router-link :to="{name:'message'}" class="weui_grid js_grid">
                 <div class="center">
                     <svg class="icon" aria-hidden="true">
@@ -126,7 +126,7 @@
                 //         //挂载到作用域内变量
                 //         this.bannerImg = res.data;
                 //     })
-                this.$ajax.get('indexBannerUrl.php')
+                this.$ajax.get('http://127.0.0.1/indexBannerUrl.php')
                     .then((res) => {
                         for(var i in res.data){
                             this.bannerImg.push(res.data[i])

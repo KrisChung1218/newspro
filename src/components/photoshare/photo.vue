@@ -30,7 +30,7 @@
             //
             //         this.picList = res.data;
             //     })
-            this.$ajax.get('photos.php')
+            this.$ajax.get('http://127.0.0.1/photos.php')
                 .then((res) => {
                     console.log(res.data)
                     for(var i in res.data){

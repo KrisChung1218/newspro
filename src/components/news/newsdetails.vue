@@ -33,7 +33,7 @@
             //         // console.log(res.data);
             //         this.newsDetails = res.data;
             //     })
-            this.$ajax.get('newsDetails.php', {
+            this.$ajax.get('http://127.0.0.1/newsDetails.php', {
                 newsId : id,
                 newsTitle : title
             }).then((res) => {

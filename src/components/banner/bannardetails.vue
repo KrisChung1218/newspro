@@ -28,7 +28,7 @@
             //     .then((res)=>{
             //         this.bannerDetails = res.data;
             //     })
-            this.$ajax.get('bannerDetails.php', {
+            this.$ajax.get('http://127.0.0.1/bannerDetails.php', {
                 bannerId : id,
                 bannerTitle : title
             }).then((res) => {

@@ -67,7 +67,7 @@
             //     .then((res)=>{
             //         this.photoNav = res.data;
             //     });
-            this.$ajax.get('photoNavList.php')
+            this.$ajax.get('http://127.0.0.1/photoNavList.php')
                 .then((res) => {
                     // 请求图文导航栏数据
                     for(var i in res.data){
@@ -91,7 +91,7 @@
                     // 请求女明星数据列表
                     this.manStar = []
                     this.NBAStar = []
-                    this.$ajax.get('womanStarList.php')
+                    this.$ajax.get('http://127.0.0.1/womanStarList.php')
                         .then((res) => {
                             console.log(res.data)
                             for(var i in res.data){
@@ -103,7 +103,7 @@
                     console.log('发送请求前')
                     this.womanStar = []
                     this.NBAStar = []
-                    this.$ajax.get('manStarList.php')
+                    this.$ajax.get('http://127.0.0.1/manStarList.php')
                         .then((res) => {
                             console.log(res.data)
                             for(var i in res.data){
@@ -116,7 +116,7 @@
                     // 请求NBA球星数据列表
                     this.womanStar = []
                     this.manStar = []
-                    this.$ajax.get('NBAStarList.php')
+                    this.$ajax.get('http://127.0.0.1/NBAStarList.php')
                         .then((res) => {
                             console.log(res.data)
                             for(var i in res.data){

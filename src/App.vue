@@ -13,8 +13,8 @@
             </router-link>
 
             <router-link class="link"  :to="{name:'map'}">
-                <div class="svg iconfont icon-ditu"></div>
-                <p>地图</p>
+                <div class="svg iconfont icon-ditu" ></div>
+                <p >地图</p>
             </router-link>
             <router-link class="link"  :to="{name:'weather'}">
                 <div class="svg iconfont icon-tianqichaxun"></div>
@@ -36,6 +36,7 @@
 <script>
     import connect from './components/common/connect'
     import shopTools from './components/common/shopTools'
+    import { MessageBox } from 'mint-ui';
 
     export default {
         data(){
@@ -77,6 +78,19 @@
                 //pickNum为页面渲染的值,num为用户选中商品加减的数值
                 this.pickNum += num;
             })
+        },
+        methods:{
+            changeCityName(){
+                console.log('gagagagag')
+                MessageBox.prompt('', '确定执行此操作');
+                MessageBox.prompt('请输入您要更换的城市名').then(({ value, action }) => {
+                    MessageBox({
+                        title: '',
+                        message: '确定执行此操作?',
+                        showCancelButton: true
+                    });
+                });
+    }
         }
     }
 </script>

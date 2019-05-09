@@ -1,7 +1,6 @@
 <template>
-    <div class="mb map" id="map">
-
-    </div>
+   <div class="mb map" id="map">
+   </div>
 </template>
 
 <script>
@@ -14,6 +13,7 @@
         },
         mounted(){
             var lnglatXY = [118.29184738623047,29.69110849940613]; //已知点坐标
+            // var lnglatXY = [116.33375122321,40.008645641406]; //已知点坐标
             var geolocation;
             var arr = [];
             var map = new AMap.Map('map',{
@@ -114,7 +114,8 @@
 */
 
 
-        }
+        },
+
     }
 </script>
 
@@ -130,4 +131,11 @@
         padding: 10px 20px !important;
         background-color: rgba(255,255,255,0.2) !important;
     }
+    #circle{
+        width: 10px;
+        height: 10px;
+        z-index: 99999;
+        background:red
+    }
+
 </style>

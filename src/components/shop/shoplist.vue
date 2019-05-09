@@ -36,7 +36,7 @@
             //     .then((res)=>{
             //         this.shopList = res.data;
             //     })
-            this.$ajax.get('shopList.php')
+            this.$ajax.get('http://127.0.0.1/shopList.php')
                 .then((res) => {
                     for(var i in res.data){
                         this.shopList.push(res.data[i])

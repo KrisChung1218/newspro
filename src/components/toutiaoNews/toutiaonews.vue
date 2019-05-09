@@ -2,19 +2,19 @@
     <div class="newsList mb">
         <head-nav title="新闻列表"></head-nav>
         <ul>
-            <li v-for="(item) in newsList" :key="item.id">
-                <router-link :to="{name:'news.details',query:{id:item.id,title:'newsList'}}">
+            <li v-for="(item) in newsList">
+                <a :href="item.url">
                     <div class="pic ">
-                        <img :src="item.picUrl" v-lazy="item.picUrl" alt="" width="100%" height="100%">
+                        <img :src="item.thumbnail_pic_s" v-lazy="item.thumbnail_pic_s" alt="" width="100%" height="100%">
                     </div>
                     <div class="con ">
                         <h2 v-text="item.title"></h2>
                         <p>
-                            <span class="fl" v-text="item.time"></span>
-                            <span class="fr">来源 {{item.source}}</span>
+                            <span class="fl" v-text="item.date"></span>
+                            <span class="fr">来源 {{item.author_name}}</span>
                         </p>
                     </div>
-                </router-link>
+                </a>
             </li>
         </ul>
     </div>
@@ -28,22 +28,16 @@
             }
         },
         created(){
-            //  新闻列表
-            // console.log( this.dataURL('vue.php','newsList') )
-            // this.$ajax.get(this.dataURL('vue.php','newsList'))
-            //     .then((res)=>{
-            //         this.newsList = res.data;
-            //     })
-            this.$ajax.get('http://127.0.0.1/newsList.php')
+            this.$ajax.get('/api/toutiao/index',{
+                params:{
+                    key: '95aae9eeea9e263289e02359e55e83a8'
+                }
+            })
                 .then((res) => {
-                    console.log(res.data)
-                    for(var i in res.data){
-                        this.newsList.push(res.data[i])
+                    for(var i in res.data.result.data){
+                        this.newsList.push(res.data.result.data[i])
                     }
-                    console.log(this.newsList)
                 })
-
-
 
         },
         mounted(){

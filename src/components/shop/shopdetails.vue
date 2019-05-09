@@ -55,7 +55,7 @@
                 //         res.data['id'] = index;  //方便把商品加入到购物车,根据id
                 //         this.newsDetails = res.data;
                 //     })
-                this.$ajax.get('shopDetails.php')
+                this.$ajax.get('http://127.0.0.1/shopDetails.php')
                     .then((res) => {
                         for(var i in res.data){
                             if(res.data[i].id == index){

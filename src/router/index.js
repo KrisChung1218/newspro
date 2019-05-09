@@ -18,6 +18,7 @@ import photoDetails from '../components/photoshare/photo';
 import shopdetails from '../components/shop/shopdetails';
 import Messages from '../components/message/message'
 import Connect from '../components/phone/connect'
+import toutiaoNews from '../components/toutiaoNews/toutiaonews'
 
 // 安装全局组件
 Vue.component('headNav',headNav);
@@ -26,7 +27,7 @@ Vue.component('dateWeather',Weather);
 // 数据请求axios
 import Axios from 'axios'
 // Axios.defaults.baseURL = 'http://47.96.29.109/vueProject/';
-Axios.defaults.baseURL = 'http://127.0.0.1/';
+// Axios.defaults.baseURL = 'http://127.0.0.1/';
 Vue.prototype.$ajax = Axios;
 // // 拼接url
 // Vue.prototype.dataURL = function (file,title,id) {
@@ -44,6 +45,7 @@ import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
 Vue.use(Mint);
 Vue.use(Router);
+
 
 // vue2-preview 缩略图
 import VuePreview from 'vue2-preview'
@@ -141,7 +143,14 @@ export default new Router({
             name:'phone.connect',
             path:'connect',
             component:Connect
+        },
+        {
+            //头条新闻
+            name:'toutiaoNews',
+            path:'toutiaonews',
+            component:toutiaoNews
         }
+
 
 
     ]

@@ -7,7 +7,7 @@
                 <div id="date" class=" on" >
                     <div class="date_main clearfix">
                         <div class="date_left">
-                            <div class="location">{{location}}</div>
+                            <div class="location">{{cityname}}</div>
                             <div class="main">
                                 <p class="month" id="month"></p>
                                 <p class="date" id="day"></p>
@@ -25,33 +25,36 @@
 
             <ul class="weatherList">
                 <li>
-                    <p class="week">周{{nowDay.day}} (实时)</p>
-                    <p class="day">{{nowDay.month}}{{nowDay.date}}</p>
-                    <div class="pic"><img :src="now.weather_pic" width="100%" height="100%" alt=""></div>
-                    <p class="temperature"> {{now.temperature}} °C</p>
-                    <p class="nowWeather">{{now.weather}}</p>
-                    <p class="windDir">{{now.wind_direction}}</p>
-                    <p class="humidity">空气湿度 {{now.sd}}</p>
+                    <p class="week">今天 (实时)</p>
+                    <p class="day">{{nowDay.month}}{{nowDay.date}}(周{{nowDay.day}} )</p>
+                    <div class="pic"><img :src="this.fimg[0]" width="100%" height="100%" alt=""></div>
+                    <p class="temperature"> {{f1.temperature}}</p>
+                    <p class="nowWeather">{{f1.weather}}</p>
+                    <p class="windDir">{{f1.wind_direction}}</p>
+                    <p class="humidity">空气湿度 {{this.humidity}}</p>
                 </li>
                 <li>
-                    <p class="week">周{{Tomorrow.day}}</p>
-                    <p class="day">{{Tomorrow.month}}{{Tomorrow.date}}</p>
-                    <div class="pic"><img :src="f2.day_weather_pic" width="100%" height="100%" alt=""></div>
-                    <p class="temperature">{{f2.night_air_temperature}} ~ {{f2.day_air_temperature}} °C</p>
-                    <p class="nowWeather">{{f2.day_weather}}</p>
-                    <p class="windDir">{{f2.day_wind_direction}}</p>
-                    <p class="humidity">降水概率 {{f2.jiangshui}}</p>
+                    <p class="week">明天</p>
+                    <p class="day">{{Tomorrow.month}}{{Tomorrow.date}}(周{{Tomorrow.day}})</p>
+                    <div class="pic"><img :src="this.fimg[1]" width="100%" height="100%" alt=""></div>
+                    <p class="temperature">{{f2.temperature}}</p>
+                    <p class="nowWeather">{{f2.weather}}</p>
+                    <p class="windDir">{{f2.wind_direction}}</p>
+                    <p class="humidity">{{f2.wind}}</p>
                 </li>
                 <li>
-                    <p class="week">周{{twoTomorrow.day}}</p>
-                    <p class="day">{{twoTomorrow.month}}{{twoTomorrow.date}}</p>
-                    <div class="pic"><img :src="f3.day_weather_pic" width="100%" height="100%" alt=""></div>
-                    <p class="temperature">{{f3.night_air_temperature}} ~ {{f3.day_air_temperature}} °C</p>
-                    <p class="nowWeather">{{f3.day_weather}}</p>
-                    <p class="windDir">{{f3.day_wind_direction}}</p>
-                    <p class="humidity">降水概率 {{f3.jiangshui}}</p>
+                    <p class="week">后天</p>
+                    <p class="day">{{twoTomorrow.month}}{{twoTomorrow.date}}(周{{twoTomorrow.day}})</p>
+                    <div class="pic"><img :src="this.fimg[2]" width="100%" height="100%" alt=""></div>
+                    <p class="temperature">{{f3.temperature}}</p>
+                    <p class="nowWeather">{{f3.weather}}</p>
+                    <p class="windDir">{{f3.wind_direction}}</p>
+                    <p class="humidity">{{f3.wind}}</p>
                 </li>
             </ul>
+        </div>
+        <div style="width: 75%;color: rgb(255, 255, 255);text-align: left;height: 60px;line-height: 1.3;font-size: 14px;margin-top: 2vh;text-indent: 7vw;margin:auto">
+            tips:{{tips}}
         </div>
     </div>
 </template>
@@ -61,15 +64,28 @@
     export default {
         data() {
             return {
-                location:'',
                 cityInfo:{},
                 now:{},
                 f1:{},
                 f2:{},
                 f3:{},
+                fimg:[],
                 nowDay:{},
                 Tomorrow:{},
-                twoTomorrow:{}
+                twoTomorrow:{},
+                tips:'',
+                images:[
+                    '../../../static/image/duoyun.png',
+                    '../../../static/image/leizhenyu.png',
+                    '../../../static/image/qing.png',
+                    '../../../static/image/wu.png',
+                    '../../../static/image/xue.png',
+                    '../../../static/image/yin.png',
+                    '../../../static/image/yujiaxue.png',
+                    '../../../static/image/zhenyu.png'
+                ],
+                cityname: '黄山',
+                humidity: null
             }
         },
         created(){
@@ -102,53 +118,47 @@
                 }
             };
 
-            {
-                function formatterDateTime() {
-                    var date=new Date();
-                    var month=date.getMonth() + 1;
-                    var datetime = date.getFullYear()
-                        + ""
-                        + (month >= 10 ? month : "0"+ month)
-                        + ""
-                        + (date.getDate() < 10 ? "0" + date.getDate() : date
-                            .getDate())
-                        + ""
-                        + (date.getHours() < 10 ? "0" + date.getHours() : date
-                            .getHours())
-                        + ""
-                        + (date.getMinutes() < 10 ? "0" + date.getMinutes() : date
-                            .getMinutes())
-                        + ""
-                        + (date.getSeconds() < 10 ? "0" + date.getSeconds() : date
-                            .getSeconds());
-                    return datetime;
-                }
-                this.location = '黄山';
-                this.$jq.ajax({
-                    type: 'post',
-                    url: 'http://route.showapi.com/9-2',
-                    dataType: 'json',
-                    data: {
-                        "showapi_timestamp": formatterDateTime(),
-                        "showapi_appid": 37928,
-                        "showapi_sign": 'd0ca1605e19241c38849c3fb9a56b447',
-                        "area":this.location,
-                    },
 
-                    error: function(XmlHttpRequest, textStatus, errorThrown) {
-                        console.log("操作失败!");
-                    },
-                    success: (result)=> {
-                        //console.log(result.showapi_res_body)
-                        this.cityInfo = result.showapi_res_body.cityInfo;
-                        this.now = result.showapi_res_body.now;
-                        this.f1 = result.showapi_res_body.f1;
-                        this.f2 = result.showapi_res_body.f2;
-                        this.f3 = result.showapi_res_body.f3;
-                    }
-                });
-            }
+            // 获取天气预报接口数据
+            // this.$ajax.get('api/weather/index',{
+            //     params:{
+            //         "cityname": this.cityname,
+            //         "dtype": "",
+            //         "format": "2",
+            //         "key": "c2c2a7e911d13ea33cd2456ff3a6fb3f"
+            //     }
+            // }).then((res) => {
+            //     console.log(res)
+            //     this.f1 = res.data.result.future[0]
+            //     this.f2= res.data.result.future[1]
+            //     this.f3 = res.data.result.future[2]
+            //     this.humidity = res.data.result.sk.humidity
+            //     this.tips = res.data.result.today.dressing_advice
+            //     for(var i=0;i<3;i++){
+            //         if(res.data.result.future[i].weather == '多云'){
+            //             this.fimg[i] = this.images[0]
+            //         }else if(res.data.result.future[i].weather.includes('雷')){
+            //             this.fimg[i] = this.images[1]
+            //         }else if(res.data.result.future[i].weather.includes('晴')){
+            //             this.fimg[i] = this.images[2]
+            //         }else if(res.data.result.future[i].weather.includes('雾')){
+            //             this.fimg[i] = this.images[3]
+            //         }else if(res.data.result.future[i].weather.includes('雪')){
+            //             this.fimg[i] = this.images[4]
+            //         }else if(res.data.result.future[i].weather.includes('阴')){
+            //             this.fimg[i] = this.images[5]
+            //         }else if(res.data.result.future[i].weather.includes('雨夹雪')){
+            //             this.fimg[i] = this.images[6]
+            //         }else if(res.data.result.future[i].weather.includes('雨') && res.data.result.future[0].weather.indexOf('雷') == -1){
+            //             this.fimg[i] = this.images[7]
+            //         }else{
+            //             this.fimg[i] = this.images[5]
+            //         }
+            //     }
+            // })
+
         }
+
     }
 </script>
 
@@ -233,4 +243,8 @@
             }
         }
     }
+    #date .date_left .main{
+        background:#FA967F;
+    }
+
 </style>

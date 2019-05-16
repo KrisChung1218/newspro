@@ -63,6 +63,7 @@
 <style scoped>
     .bg{
         height: 100%;
+        margin-top: 15vw;
         /*background: -webkit-linear-gradient(*/
 
                 /*#394984,*/

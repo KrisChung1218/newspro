@@ -50,6 +50,7 @@
     @rem:750/10rem;
     .mb{
         margin-bottom: 20vw;
+        margin-top: 10vw;
     }
     /*likeYou*/
 .likeYou{

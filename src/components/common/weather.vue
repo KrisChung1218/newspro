@@ -1,12 +1,13 @@
 <template>
     <div class="bg">
+
         <div class="weather">
             <div class="address">{{cityInfo.c9}} {{cityInfo.c7}} {{cityInfo.c5}}</div>
 
             <div class="clearFix">
                 <div id="date" class=" on" >
                     <div class="date_main clearfix">
-                        <div class="date_left">
+                        <div class="date_left" @click="adressSelectShow">
                             <div class="location">{{cityname}}</div>
                             <div class="main">
                                 <p class="month" id="month"></p>
@@ -56,7 +57,9 @@
         <div style="width: 75%;color: rgb(255, 255, 255);text-align: left;height: 60px;line-height: 1.3;font-size: 3.5vw;text-indent: 7vw;margin:5vw auto">
             tips:{{tips}}
         </div>
+        <van-picker style="position: fixed;bottom: 15vw;width: 100%;" v-if="this.adressisShow" :columns="columns" show-toolbar title="请选择城市" @change="onChange" @cancel="onCancel" @confirm="onConfirm"/>
     </div>
+
 </template>
 
 <script>
@@ -69,11 +72,13 @@
                 f1:{},
                 f2:{},
                 f3:{},
+                adressisShow:false,
                 fimg:[],
                 nowDay:{},
                 Tomorrow:{},
                 twoTomorrow:{},
                 tips:'',
+                columns: [],
                 images:[
                     '../../../static/image/duoyun.png',
                     '../../../static/image/leizhenyu.png',
@@ -84,7 +89,8 @@
                     '../../../static/image/yujiaxue.png',
                     '../../../static/image/zhenyu.png'
                 ],
-                cityname: '黄山',
+                cityname: '黄山市',
+                citySelected:'',
                 humidity: null
             }
         },
@@ -119,49 +125,111 @@
             };
 
 
-            // 获取天气预报接口数据
-            // this.$ajax.get('api/weather/index',{
-            //     params:{
-            //         "cityname": this.cityname,
-            //         "dtype": "",
-            //         "format": "2",
-            //         "key": "c2c2a7e911d13ea33cd2456ff3a6fb3f"
-            //     }
-            // }).then((res) => {
-            //     console.log(res)
-            //     this.f1 = res.data.result.future[0]
-            //     this.f2= res.data.result.future[1]
-            //     this.f3 = res.data.result.future[2]
-            //     this.humidity = res.data.result.sk.humidity
-            //     this.tips = res.data.result.today.dressing_advice
-            //     for(var i=0;i<3;i++){
-            //         if(res.data.result.future[i].weather == '多云'){
-            //             this.fimg[i] = this.images[0]
-            //         }else if(res.data.result.future[i].weather.includes('雷')){
-            //             this.fimg[i] = this.images[1]
-            //         }else if(res.data.result.future[i].weather.includes('晴')){
-            //             this.fimg[i] = this.images[2]
-            //         }else if(res.data.result.future[i].weather.includes('雾')){
-            //             this.fimg[i] = this.images[3]
-            //         }else if(res.data.result.future[i].weather.includes('雪')){
-            //             this.fimg[i] = this.images[4]
-            //         }else if(res.data.result.future[i].weather.includes('阴')){
-            //             this.fimg[i] = this.images[5]
-            //         }else if(res.data.result.future[i].weather.includes('雨夹雪')){
-            //             this.fimg[i] = this.images[6]
-            //         }else if(res.data.result.future[i].weather.includes('雨') && res.data.result.future[0].weather.indexOf('雷') == -1){
-            //             this.fimg[i] = this.images[7]
-            //         }else{
-            //             this.fimg[i] = this.images[5]
-            //         }
-            //     }
-            // })
+            // 页面加载调用一次天气数据请求
+            // this.ajaxWeatherInfo()
+
+            //获取所有城市名列表
+            this.$ajax.get('../../../static/area.json').then((res) => {
+                for(var i of res.data.city){
+                    if(i.text.includes('市')){
+                        this.columns.push(i.text)
+                    }
+                }
+            })
 
 
 
-
-
-
+        },
+        methods: {
+            onChange(picker, value, index) {
+                this.citySelected = value
+            },
+            onConfirm(){
+                this.cityname = this.citySelected;
+                this.adressisShow = false
+                // 获取天气预报接口数据
+                // this.$ajax.get('api/weather/index',{
+                //     params:{
+                //         "cityname": this.cityname,
+                //         "dtype": "",
+                //         "format": "2",
+                //         "key": "c2c2a7e911d13ea33cd2456ff3a6fb3f"
+                //     }
+                // }).then((res) => {
+                //     this.f1 = res.data.result.future[0]
+                //     this.f2= res.data.result.future[1]
+                //     this.f3 = res.data.result.future[2]
+                //     this.humidity = res.data.result.sk.humidity
+                //     this.tips = res.data.result.today.dressing_advice
+                //     for(var i=0;i<3;i++){
+                //         if(res.data.result.future[i].weather == '多云'){
+                //             this.fimg[i] = this.images[0]
+                //         }else if(res.data.result.future[i].weather.includes('雷')){
+                //             this.fimg[i] = this.images[1]
+                //         }else if(res.data.result.future[i].weather.includes('晴')){
+                //             this.fimg[i] = this.images[2]
+                //         }else if(res.data.result.future[i].weather.includes('雾')){
+                //             this.fimg[i] = this.images[3]
+                //         }else if(res.data.result.future[i].weather.includes('雪')){
+                //             this.fimg[i] = this.images[4]
+                //         }else if(res.data.result.future[i].weather.includes('阴')){
+                //             this.fimg[i] = this.images[5]
+                //         }else if(res.data.result.future[i].weather.includes('雨夹雪')){
+                //             this.fimg[i] = this.images[6]
+                //         }else if(res.data.result.future[i].weather.includes('雨') && res.data.result.future[0].weather.indexOf('雷') == -1){
+                //             this.fimg[i] = this.images[7]
+                //         }else{
+                //             this.fimg[i] = this.images[5]
+                //         }
+                //     }
+                // })
+            },
+            onCancel(){
+                this.adressisShow = false
+            },
+            adressSelectShow(){
+                // 默认选中第一个地点
+                this.citySelected = this.columns[0]
+                this.adressisShow = true
+            },
+            ajaxWeatherInfo(){
+                // 获取天气预报接口数据
+                this.$ajax.get('api/weather/index',{
+                    params:{
+                        "cityname": this.cityname,
+                        "dtype": "",
+                        "format": "2",
+                        "key": "c2c2a7e911d13ea33cd2456ff3a6fb3f"
+                    }
+                }).then((res) => {
+                    this.f1 = res.data.result.future[0]
+                    this.f2= res.data.result.future[1]
+                    this.f3 = res.data.result.future[2]
+                    this.humidity = res.data.result.sk.humidity
+                    this.tips = res.data.result.today.dressing_advice
+                    for(var i=0;i<3;i++){
+                        if(res.data.result.future[i].weather == '多云'){
+                            this.fimg[i] = this.images[0]
+                        }else if(res.data.result.future[i].weather.includes('雷')){
+                            this.fimg[i] = this.images[1]
+                        }else if(res.data.result.future[i].weather.includes('晴')){
+                            this.fimg[i] = this.images[2]
+                        }else if(res.data.result.future[i].weather.includes('雾')){
+                            this.fimg[i] = this.images[3]
+                        }else if(res.data.result.future[i].weather.includes('雪')){
+                            this.fimg[i] = this.images[4]
+                        }else if(res.data.result.future[i].weather.includes('阴')){
+                            this.fimg[i] = this.images[5]
+                        }else if(res.data.result.future[i].weather.includes('雨夹雪')){
+                            this.fimg[i] = this.images[6]
+                        }else if(res.data.result.future[i].weather.includes('雨') && res.data.result.future[0].weather.indexOf('雷') == -1){
+                            this.fimg[i] = this.images[7]
+                        }else{
+                            this.fimg[i] = this.images[5]
+                        }
+                    }
+                })
+            }
         }
 
     }
@@ -177,6 +245,9 @@
                 #394984,
                 #edb46d
         ) !important;
+        position: fixed;
+        width: 100%;
+        top: 20vw;
     }
     .weather{
         overflow: hidden;

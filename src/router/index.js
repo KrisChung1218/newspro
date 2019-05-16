@@ -50,6 +50,13 @@ import 'mint-ui/lib/style.css';
 Vue.use(Mint);
 Vue.use(Router);
 
+import Vant from 'vant';
+import 'vant/lib/index.css';
+
+Vue.use(Vant);
+
+
+
 
 // vue2-preview 缩略图
 import VuePreview from 'vue2-preview'

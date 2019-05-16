@@ -58,6 +58,10 @@
         align-items: center;
         letter-spacing: 2px;
         text-align: center;
+        position: fixed;
+        top: 10vw;
+        width: 100%;
+        z-index: 1000;
     }
     header a{
         width: 18vw;

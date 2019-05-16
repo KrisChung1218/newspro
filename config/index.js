@@ -25,7 +25,8 @@ module.exports = {
             pathRewrite: {
                 '^/api': 'http://v.juhe.cn' //路径重写
             }
-        }
+        },
+
     },
 
     // Various Dev Server settings

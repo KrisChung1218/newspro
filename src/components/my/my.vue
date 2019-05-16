@@ -41,6 +41,7 @@
     @rem:750/10rem;
     .mb{
         margin-bottom: 17vw;
+        margin-top: 9vw;
 
     }
     #write{

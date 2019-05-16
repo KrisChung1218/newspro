@@ -99,6 +99,7 @@
     @rem:750/10rem;
     .mb{
         margin-bottom: 0;
+        margin-top: 10vw;
         height: 79%;
     }
     .shopdedatils{

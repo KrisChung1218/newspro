@@ -48,6 +48,7 @@
     @rem: 750/10rem;
     .mb {
         margin-bottom: 130/@rem;
+        margin-top: 10vw;
     }
 
     .photoImgs {

@@ -60,7 +60,7 @@
 </template>
 
 <script>
-    import '../../../static/css/date.css'
+    import '../../../static/css/date.css';
     export default {
         data() {
             return {
@@ -157,12 +157,18 @@
             //     }
             // })
 
+
+
+
+
+
         }
 
     }
 </script>
 
 <style scoped lang="less">
+
     @rem:750/10rem;
     .bg{
         height: 100%;
@@ -263,5 +269,6 @@
         border: 1px solid rgba(255,255,255,0.1);
         border-radius: 5px;
     }
+
 
 </style>

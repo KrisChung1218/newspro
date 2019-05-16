@@ -89,39 +89,36 @@
             getImgs(title){
                 if(title == 'nav1'){
                     // 请求女明星数据列表
-                    this.manStar = []
-                    this.NBAStar = []
+
                     this.$ajax.get('http://47.100.249.59/newsproDatas/womanStarList.php')
                         .then((res) => {
                             console.log(res.data)
                             for(var i in res.data){
                                 this.womanStar.push(res.data[i])
                             }
+                            this.manStar = []
+                            this.NBAStar = []
                         })
                 }else if(title == 'nav2'){
                     // 请求男明星数据列表
-                    console.log('发送请求前')
-                    this.womanStar = []
-                    this.NBAStar = []
                     this.$ajax.get('http://47.100.249.59/newsproDatas/manStarList.php')
                         .then((res) => {
-                            console.log(res.data)
                             for(var i in res.data){
                                 this.manStar.push(res.data[i])
                             }
+                            this.womanStar = []
+                            this.NBAStar = []
                         })
-                    console.log( this.manStar)
-                    console.log('发送请求后')
                 }else if(title == 'nav3'){
                     // 请求NBA球星数据列表
-                    this.womanStar = []
-                    this.manStar = []
+
                     this.$ajax.get('http://47.100.249.59/newsproDatas/NBAStarList.php')
                         .then((res) => {
-                            console.log(res.data)
                             for(var i in res.data){
                                 this.NBAStar.push(res.data[i])
                             }
+                            this.womanStar = []
+                            this.manStar = []
                         })
                 }
                 this.tabActive();

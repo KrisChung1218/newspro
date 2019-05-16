@@ -40,13 +40,13 @@
 <style scoped lang="less">
     @rem:750/10rem;
     .mb{
-        margin-bottom: 130/@rem;
+        margin-bottom: 17vw;
 
     }
     #write{
         background-color: #15131E;
         p{
-            font-size: 30/@rem;
+            font-size: 4vw;
             color: rgba(128,118,212,1);
         }
     }

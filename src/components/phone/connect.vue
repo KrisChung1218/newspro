@@ -23,8 +23,12 @@
                 #edb46d
         ) !important;
     }
+    h2{
+        font-size:7vw;
+    }
     span{
         color:orange;
+        font-size:7vw;
     }
 
 

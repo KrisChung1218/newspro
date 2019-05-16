@@ -55,7 +55,7 @@
                 //         res.data['id'] = index;  //方便把商品加入到购物车,根据id
                 //         this.newsDetails = res.data;
                 //     })
-                this.$ajax.get('http://127.0.0.1/shopDetails.php')
+                this.$ajax.get('http://47.100.249.59/newsproDatas/shopDetails.php')
                     .then((res) => {
                         for(var i in res.data){
                             if(res.data[i].id == index){
@@ -98,31 +98,34 @@
 <style scoped lang="less">
     @rem:750/10rem;
     .mb{
-        margin-bottom: 130/@rem;
+        margin-bottom: 0;
+        height: 79%;
     }
     .shopdedatils{
         padding: 22/@rem;
         position: relative;
         text-align: left;
+        height: 100%;
         background: white;
         img{
             display: block;
             margin: auto;
         }
         h3{
-            font-size: 33/@rem;
+            font-size: 4.5vw;
         }
         .money{
             color: red;
+            margin-top: 6vw;
             .symbol{
-                font-size: 22/@rem;
+                font-size: 5vw;
             }
             .price{
-                font-size: 32/@rem;
+                font-size: 6vw;
             }
         }
         .courier{
-            font-size: 25/@rem;
+            font-size: 3.5vw;
             color: #999;
         }
         .buyNum{
@@ -130,15 +133,17 @@
             border-left: none;
             border-right: none;
 
-            padding: 20/@rem;
+            padding: 2vw;
             .buyfont{
-                font-size: 40/@rem;
+                font-size: 3.5vw;
+                line-height: 2.5;
             }
             .addNum{
-                font-size: 40/@rem;
+                font-size: 5vw;
                 a{
-                    width: 60/@rem;
-                    height: 60/@rem;
+                    width: 8vw;
+                    height: 7vw;
+                    line-height: 7vw;
                     background: #f1f1f1;
                     display: inline-block;
                     color: #878787;
@@ -150,14 +155,18 @@
             }
         }
         .buy{
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            height: 96/@rem;
+            height: 9vw;
             text-align: center;
-            line-height: 96/@rem;
+            line-height: 9vw;
+            margin-top: 3vw;
             a{
                 flex: 1;
                 color: white;
-                font-size: 31/@rem;
+                font-size: 3.6vw;
+                letter-spacing: 1px;
             }
             .addCart{
                 background: #ff9402;

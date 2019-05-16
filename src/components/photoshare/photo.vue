@@ -30,7 +30,7 @@
             //
             //         this.picList = res.data;
             //     })
-            this.$ajax.get('http://127.0.0.1/photos.php')
+            this.$ajax.get('http://47.100.249.59/newsproDatas/photos.php')
                 .then((res) => {
                     console.log(res.data)
                     for(var i in res.data){
@@ -56,8 +56,8 @@
         position: relative;
         img {
             display: block;
-            width: 670/@rem;
-            margin-bottom: 30/@rem;
+            width: 90vw;
+            margin-bottom: 4vw;
             object-fit: cover;
         }
     }

@@ -127,7 +127,7 @@
                 //         //挂载到作用域内变量
                 //         this.bannerImg = res.data;
                 //     })
-                this.$ajax.get('http://127.0.0.1/indexBannerUrl.php')
+                this.$ajax.get('http://47.100.249.59/newsproDatas/indexBannerUrl.php')
                     .then((res) => {
                         for(var i in res.data){
                             this.bannerImg.push(res.data[i])
@@ -143,7 +143,7 @@
     @rem: 750/10rem;
     .high {
         .banner {
-            height: 450/@rem;
+            height: 60vw;
             background: #ddd;
         }
 

@@ -34,6 +34,7 @@ Vue.prototype.$ajax = Axios;
 //     id = (id === undefined)?'':id;
 //     return file+'?title='+title+id;
 // };
+//设置响应头类型，解决请求聚合数据api中文乱码的问题
 Axios.defaults.headers = {
     "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
 }
@@ -57,6 +58,7 @@ Vue.use(VuePreview)
 export default new Router({
     //Vue.js文档关于处理点击添加类名的语法,rlActive为global中定义的类名
     linkActiveClass:'rlActive',
+    mode: 'history',  //去掉url中的#
     routes: [
         {
             //重定向，以解决首页按钮默认选中的情况

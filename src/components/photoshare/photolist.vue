@@ -67,7 +67,7 @@
             //     .then((res)=>{
             //         this.photoNav = res.data;
             //     });
-            this.$ajax.get('http://127.0.0.1/photoNavList.php')
+            this.$ajax.get('http://47.100.249.59/newsproDatas/photoNavList.php')
                 .then((res) => {
                     // 请求图文导航栏数据
                     for(var i in res.data){
@@ -91,7 +91,7 @@
                     // 请求女明星数据列表
                     this.manStar = []
                     this.NBAStar = []
-                    this.$ajax.get('http://127.0.0.1/womanStarList.php')
+                    this.$ajax.get('http://47.100.249.59/newsproDatas/womanStarList.php')
                         .then((res) => {
                             console.log(res.data)
                             for(var i in res.data){
@@ -103,7 +103,7 @@
                     console.log('发送请求前')
                     this.womanStar = []
                     this.NBAStar = []
-                    this.$ajax.get('http://127.0.0.1/manStarList.php')
+                    this.$ajax.get('http://47.100.249.59/newsproDatas/manStarList.php')
                         .then((res) => {
                             console.log(res.data)
                             for(var i in res.data){
@@ -116,7 +116,7 @@
                     // 请求NBA球星数据列表
                     this.womanStar = []
                     this.manStar = []
-                    this.$ajax.get('http://127.0.0.1/NBAStarList.php')
+                    this.$ajax.get('http://47.100.249.59/newsproDatas/NBAStarList.php')
                         .then((res) => {
                             console.log(res.data)
                             for(var i in res.data){
@@ -154,14 +154,15 @@
         margin-bottom: 130/@rem;
     }
     .tabItem{
-        font-size: 30/@rem;
+        font-size: 3.5vw;
         display: flex;
 
 
         a{
             flex: 1;
             color: #26a2ff;
-            padding: 30/@rem 0;
+            padding: 2.5vw 0;
+            height: 11vw;
         }
         a.active{
             border-bottom: 3px solid #26a2ff;
@@ -174,7 +175,7 @@
         .conList{
             display: none;
             ul li{
-                padding: 25/@rem 0;
+                padding: 3vw 0;
                 border-bottom: 1px solid #ddd;
             }
             a{
@@ -183,13 +184,13 @@
                 justify-content: center;
             }
             .pic{
-                width: 140/@rem;
-                height: 100/@rem;
-                margin-right: 25/@rem;
+                width: 18vw;
+                height: 13vw;
+                margin-right: 4vw;
             }
             .con{
-                width: 550/@rem;
-                height: 110/@rem;
+                width: 70vw;
+                height: 13vw;
 
                 display: flex;
                 align-items: center;
@@ -201,15 +202,7 @@
                 text-overflow: ellipsis;
                 color: #555;
                 font-weight: normal;
-                font-size: 25/@rem;
-            }
-            p{
-                width: 100%;
-                color: #999;
-                font-size: 22/@rem;
-            }
-            p span{
-                /*-padding: 0 25/@rem;*/
+                font-size: 3.5vw;
             }
         }
         .conList.show{

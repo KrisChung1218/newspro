@@ -28,7 +28,7 @@
             //     .then((res)=>{
             //         this.bannerDetails = res.data;
             //     })
-            this.$ajax.get('http://127.0.0.1/bannerDetails.php', {
+            this.$ajax.get('http://47.100.249.59/newsproDatas/bannerDetails.php', {
                 bannerId : id,
                 bannerTitle : title
             }).then((res) => {
@@ -55,24 +55,28 @@
         text-align: left;
     }
     .title{
-        font-size: 40/@rem;
+        font-size: 5vw;
         color: #3f4146;
+        margin-top: 3vw;
     }
     .source{
-        font-size: 24/@rem;
+        font-size: 4vw;
+        float: left;
     }
     .time{
-        font-size: 20/@rem;
+        font-size: 3.4vw;
+        float: right;
     }
     .pic{
         display: block;
         margin: auto;
-        width: 670/@rem;
+        width: 90vw;
     }
     .content{
-        font-size: 32/@rem;
+        font-size: 4.5vw;
         text-align: left;
-        text-indent: 2em;
+        text-indent: 7vw;
+        margin-bottom: 20vw;
     }
 
 }

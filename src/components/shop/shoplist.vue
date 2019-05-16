@@ -36,7 +36,7 @@
             //     .then((res)=>{
             //         this.shopList = res.data;
             //     })
-            this.$ajax.get('http://127.0.0.1/shopList.php')
+            this.$ajax.get('http://47.100.249.59/newsproDatas/shopList.php')
                 .then((res) => {
                     for(var i in res.data){
                         this.shopList.push(res.data[i])
@@ -49,13 +49,13 @@
 <style scoped lang="less">
     @rem:750/10rem;
     .mb{
-        margin-bottom: 130/@rem;
+        margin-bottom: 20vw;
     }
     /*likeYou*/
 .likeYou{
         overflow: hidden;
         position: relative;
-        padding-top: 30/@rem;
+        padding-top: 4vw;
         background: #eee;
     ul{
         display: -webkit-flex;
@@ -64,31 +64,31 @@
         flex-wrap: wrap;
     }
     ul li{
-        width: 370/@rem;
-        height: 528/@rem;
+        width: 49vw;
+        height: 70vw;
         background: white;
-        font-size: 27/@rem !important;
+        font-size: 3.5vw !important;
         overflow: hidden;
-        margin-bottom: 10/@rem;
+        margin-bottom: 3vw;
     }
     ul li a{
         display: block;
     }
     ul li .pic{
-        height: 369/@rem;
+        height: 50vw;
     }
 
     ul li .des{
-        font-size: 27/@rem !important;
-        padding:0 20/@rem;
-        margin: 20/@rem 0;
-        height: 70/@rem;
+        font-size: 3vw !important;
+        padding:0 3vw;
+        margin: 2vw 0;
+        height: 8vw;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-height: 64/@rem;
+        max-height: 10vw;
         -webkit-line-clamp: 2;
         word-break: break-all;
-        line-height: 35/@rem;
+        line-height: 1.3;
         color: rgb(51, 51, 51);
     }
 

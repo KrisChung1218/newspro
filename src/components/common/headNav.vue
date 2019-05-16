@@ -43,18 +43,24 @@
 <style scoped lang="less">
     @rem:750/10rem;
     header{
-        height: 70/@rem;
+        height: 10vw;
         background: #3c3f41;
         color: white !important;
-        font-size: 25/@rem;
+        font-size: 3.7vw;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         letter-spacing: 2px;
         text-align: center;
     }
     header a{
-        width: 2rem;
+        width: 18vw;
         color: white !important;
     }
     .icon-fanhui2{

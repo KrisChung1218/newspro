@@ -34,7 +34,7 @@
             //     .then((res)=>{
             //         this.newsList = res.data;
             //     })
-            this.$ajax.get('http://127.0.0.1/newsList.php')
+            this.$ajax.get('http://47.100.249.59/newsproDatas/newsList.php')
                 .then((res) => {
                     console.log(res.data)
                     for(var i in res.data){
@@ -60,7 +60,7 @@
     .newsList{
         text-align: left;
         ul li{
-            padding: 25/@rem 0;
+            padding: 3vw 0;
             border-bottom: 1px solid #ddd;
         }
         a{
@@ -69,17 +69,20 @@
             justify-content: center;
         }
         .pic{
-            width: 130/@rem;
-            height: 100/@rem;
-            margin-right: 25/@rem;
+            width: 18vw;
+            height: 13vw;
+            margin-right: 3vw;
         }
         .con{
-            width: 550/@rem;
-            height: 110/@rem;
-
+            width: 70vw;
+            height: 14vw;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
+            -ms-flex-flow: wrap;
             flex-flow: wrap;
-            align-content:space-between;
+            -ms-flex-line-pack: justify;
+            align-content: space-between;
         }
         h2{
             width: 100%;

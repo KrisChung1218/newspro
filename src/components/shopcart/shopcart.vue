@@ -67,7 +67,7 @@
             let title = this.$route.query.title || 'likeYou';
             idArr.forEach((item,index)=>{
                 // 遍历商品序号查找商品数据并加入到shopList数组中
-                this.$ajax.get('http://127.0.0.1/shopDetails.php')
+                this.$ajax.get('http://47.100.249.59/newsproDatas/shopDetails.php')
                     .then((res) => {
                         // 遍历所有商品序号查找被加入购物车的商品
                         for(var i in res.data){
@@ -173,12 +173,12 @@
             overflow: hidden;
             padding: 25/@rem 0;
             .pic{
-                width: 200/@rem;
-                height: 200/@rem;
+                width: 25vw;
+                height: 28vw;
             }
             .des{
-                width: 400/@rem;
-                font-size: 30/@rem;
+                width: 54vw;
+                font-size: 4vw;
             }
         }
 
@@ -186,18 +186,19 @@
             border-top: 1px solid #ddd;
             border-left: none;
             border-right: none;
-            padding: 20/@rem 0;
+            padding: 3vw 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             .buyfont{
-                font-size: 30/@rem;
+                font-size: 4vw;
             }
             .addNum{
-                font-size: 40/@rem;
+                font-size: 5vw;
                 a{
-                    width: 60/@rem;
-                    height: 60/@rem;
+                    width: 8vw;
+                    height: 8vw;
+                    line-height: 8vw;
                     background: #f1f1f1;
                     display: inline-block;
                     color: #878787;
@@ -209,41 +210,29 @@
             }
             .del{
                 color: skyblue;
-                font-size: 30/@rem;
+                font-size: 4vw;
             }
         }
     }
 
     .totalPrice{
-        height: 100/@rem;
+        height: 13vw;
         text-align: center;
         display: flex;
+        line-height: 13vw;
         justify-content: space-between;
-        margin-top: 20/@rem;
+        margin-top: 8vw;
         background: rgba(255,255,255,0.7);
         box-shadow: 0 -1px 2px #d7d7d7;
         /*align-items: center;*/
-        .all{
 
-            color: #999;
-            font-size: 20/@rem;
-            i{
-                width: 40/@rem;
-                height: 40/@rem;
-                border-radius: 50%;
-                background: #e93b3d;
-            }
-            i::after{
-                content: '';
-            }
-        }
         .total{
             text-align: left;
-            text-indent: 1em;
+            text-indent: 4vw;
             p{
                 height: 50%;
-                font-size: 32/@rem ;
-                line-height: 50/@rem;
+                font-size: 4vw;
+                line-height: 8vw;
                 color: #999;
             }
             .totalMoney{
@@ -258,17 +247,17 @@
             }
         }
         .goPayment{
-            width: 220/@rem;
+            width: 24vw;
             background: #e4393c;
             color: #fff;
             span{
                 vertical-align: middle;
             }
             .font{
-                font-size: 32/@rem;
+                font-size: 3.5vw;
             }
             .num{
-                font-size: 23/@rem;
+                font-size: 3.3vw;
             }
 
         }

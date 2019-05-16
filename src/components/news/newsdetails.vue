@@ -33,7 +33,7 @@
             //         // console.log(res.data);
             //         this.newsDetails = res.data;
             //     })
-            this.$ajax.get('http://127.0.0.1/newsDetails.php', {
+            this.$ajax.get('http://47.100.249.59/newsproDatas/newsDetails.php', {
                 newsId : id,
                 newsTitle : title
             }).then((res) => {
@@ -54,32 +54,32 @@
 <style scoped lang="less">
     @rem:750/10rem;
     .mb{
-        margin-bottom: 130/@rem;
+        margin-bottom: 20vw;
     }
     .con{
-        padding: 0 40/@rem;
+        padding: 0 5vw;
         h2{
             text-align: left;
         }
         .title{
-            font-size: 40/@rem;
+            font-size: 5vw;
             color: #3f4146;
         }
         .source{
-            font-size: 24/@rem;
+            font-size: 4vw;
         }
         .time{
-            font-size: 20/@rem;
+            font-size: 3.5vw;
         }
         .pic{
             display: block;
             margin: auto;
-            width: 670/@rem;
+            width: 89vw;
         }
         .content{
-            font-size: 32/@rem;
+            font-size: 4.5vw;
             text-align: left;
-            text-indent: 2em;
+            text-indent: 5vw;
             margin-bottom: 5vh;
         }
         .editor{

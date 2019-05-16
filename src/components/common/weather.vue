@@ -53,7 +53,7 @@
                 </li>
             </ul>
         </div>
-        <div style="width: 75%;color: rgb(255, 255, 255);text-align: left;height: 60px;line-height: 1.3;font-size: 14px;margin-top: 2vh;text-indent: 7vw;margin:auto">
+        <div style="width: 75%;color: rgb(255, 255, 255);text-align: left;height: 60px;line-height: 1.3;font-size: 3.5vw;text-indent: 7vw;margin:5vw auto">
             tips:{{tips}}
         </div>
     </div>
@@ -189,29 +189,29 @@
         }
         .weatherList{
             display: flex;
-            height: 440/@rem;
+            height: 45vw;
             border-top: 1px solid rgba(255,255,255,0.1);
             li{
                 flex: 1;
                 border-right: 1px solid rgba(255,255,255,0.1);
-                padding: 20/@rem 0;
+                padding: 3vw 0;
                 overflow: hidden;
                 p{
                     color: #fff ;
                     text-shadow: 1px 1px 1px #555;;
-                    font-size: 20/@rem;
+                    font-size: 3.5vw;
                     margin: 6/@rem 0;
                 }
                 .week{
 
                 }
                 .day{
-                    font-size: 16/@rem;
+                    font-size: 3vw;
                     opacity: 0.5;
                 }
                 .pic{
-                    width: 130/@rem;
-                    height: 130/@rem;
+                    width: 14vw;
+                    height: 13vw;
                     margin: auto;
                 }
                 .temperature{
@@ -234,8 +234,8 @@
                     margin: 0;
                 }
                 .pic{
-                    width: 180/@rem;
-                    height: 180/@rem;
+                    width: 17vw;
+                    height: 16vw;
                 }
             }
             li:last-child{
@@ -245,6 +245,23 @@
     }
     #date .date_left .main{
         background:#FA967F;
+    }
+    #date .date_left{
+        width: 55px;
+        height: 75px;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 5px;
+        float: left;
+    }
+    #date .date_main{
+        width: 200px;
+    }
+    #date .date_right{
+        width: 130px;
+        height: 75px;
+        float: right;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 5px;
     }
 
 </style>

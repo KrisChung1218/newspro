@@ -110,8 +110,8 @@
         margin: auto;
         position: relative;
         header{
-            height: 80/@rem;
-            line-height: 80/@rem;
+            height: 10.5vw;
+            line-height: 10.5vw;
             font-size: 30/@rem;
             color: white;
             background: #26a2ff;
@@ -122,7 +122,7 @@
             left: 0;
             right: 0;
             margin: auto;
-            height: 6vh;
+            height: 10.5vw;
             line-height: 6vh;
             width: 100%;
             z-index: 999;
@@ -140,7 +140,7 @@
         bottom: 0;
         left: 0;
         z-index: 9;
-        height: 130/@rem;
+        height: 17vw;
         background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), color-stop(50%, #d9d9d9), color-stop(50%, transparent));
         background-image: linear-gradient(180deg, #d9d9d9, #d9d9d9 50%, transparent 50%);
         background-size: 100% 1px;
@@ -164,8 +164,8 @@
 
         }
         .link .svg{
-            margin: 15/@rem auto 5px;
-            font-size: 44/@rem;
+            margin: 2vw auto 2px;
+            font-size: 6vw;
         }
 
         .link p{
@@ -186,12 +186,12 @@
         .count .showNum{
             position: absolute;
             margin: auto;
-            width: 40/@rem;
-            height: 40/@rem;
-            line-height: 40/@rem;
+            width: 4vw;
+            height: 4vw;
+            line-height: 4vw;
             background: red;
             color: #fff;
-            font-size: 12/@rem;
+            font-size: 12px;
             border-radius: 50%;
             font-style: normal;
         }

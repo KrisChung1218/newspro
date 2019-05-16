@@ -71,15 +71,15 @@
         background:#F5F5F5;
     }
     .box{
-        width:95%;
+        width: 95%;
         height: auto;
-        background-image: -webkit-linear-gradient(0deg,#fff,#fff),linear-gradient(80deg,rgba(177,218,243,1),rgba(236,125,112,1),rgba(191,138,182,1),rgba(255,246,158,1));
-        background-image: linear-gradient(0deg,#fff,#fff),linear-gradient(80deg,rgba(177,218,243,1),rgba(236,125,112,1),rgba(191,138,182,1),rgba(255,246,158,1));
-        background-clip: padding-box,border-box;
+        /* background-image: linear-gradient(0deg,#fff,#fff),linear-gradient(80deg,rgba(177,218,243,1),rgba(236,125,112,1),rgba(191,138,182,1),rgba(255,246,158,1)); */
+        /* background-clip: padding-box,border-box; */
         border: 1px solid transparent;
         border-radius: 7px;
-        box-shadow:6px 4px 6px 0px rgba(239, 109, 128, 0.35);
-        margin:5vw auto;
+        /* -webkit-box-shadow: 6px 4px 6px 0px rgba(239, 109, 128, 0.35); */
+        box-shadow: 1px 0px 12px 2px rgba(43, 43, 43, 0.2);
+        margin: 10vw auto;
     }
     .box .title{
         width: 80%;
@@ -113,7 +113,7 @@
         width: 100%;
         height: auto;
         font-size: 18px;
-        border: 1px solid #fff;
+        border: 1px solid transparent;
         font-family: '微软雅黑';
         margin-top: 2vw;
         margin-bottom: 2vw;

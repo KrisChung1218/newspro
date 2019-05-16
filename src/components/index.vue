@@ -65,13 +65,14 @@
                     </p>
                 </div>
             </router-link>
-            <router-link :to="{name:'message'}" class="weui_grid js_grid">
+            <router-link :to="{name:'historytoday'}" class="weui_grid js_grid">
                 <div class="center">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-iconfontzhengzaidingwei"></use>
-                    </svg>
+                    <!--<svg class="icon" aria-hidden="true">-->
+                        <!--<use xlink:href="#icon-lishi"></use>-->
+                    <!--</svg>-->
+                    <img src="../../static/image/history.png" alt="" style="width: 38px;margin-top: 12px;margin-bottom: 5px;">
                     <p class="weui_grid_label">
-                        短信联系
+                        历史今日
                     </p>
                 </div>
             </router-link>

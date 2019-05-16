@@ -16,7 +16,7 @@ import bannerDetails from '../components/banner/bannardetails';
 import newsDetails from '../components/news/newsdetails';
 import photoDetails from '../components/photoshare/photo';
 import shopdetails from '../components/shop/shopdetails';
-import Messages from '../components/message/message'
+import Historytoday from '../components/historytoday/historytoday'
 import Connect from '../components/phone/connect'
 import toutiaoNews from '../components/toutiaoNews/toutiaonews'
 
@@ -34,6 +34,9 @@ Vue.prototype.$ajax = Axios;
 //     id = (id === undefined)?'':id;
 //     return file+'?title='+title+id;
 // };
+Axios.defaults.headers = {
+    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+}
 
 
 // 数据请求jquery
@@ -134,9 +137,9 @@ export default new Router({
         },
         {
             //短信联系
-            name:'message',
-            path:'/message',
-            component:Messages
+            name:'historytoday',
+            path:'/historytoday',
+            component:Historytoday
         },
         {
             //电话联系

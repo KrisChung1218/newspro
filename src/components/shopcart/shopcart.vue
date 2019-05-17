@@ -156,6 +156,8 @@
 .shopArea{
     text-align: left;
     background: #fff;
+    overflow-y: scroll;
+    padding-bottom: 30vw;
 
     .location{
         font-size: 32/@rem;
@@ -195,11 +197,11 @@
                 font-size: 4vw;
             }
             .addNum{
-                font-size: 5vw;
+                font-size: 3.5vw;
                 a{
-                    width: 8vw;
-                    height: 8vw;
-                    line-height: 8vw;
+                    width: 7vw;
+                    height: 7vw;
+                    line-height: 7vw;
                     background: #f1f1f1;
                     display: inline-block;
                     color: #878787;
@@ -211,7 +213,7 @@
             }
             .del{
                 color: skyblue;
-                font-size: 4vw;
+                font-size: 3.5vw;
             }
         }
     }
@@ -244,7 +246,7 @@
                 }
             }
             .preferential{
-                font-size: 18/@rem;
+                font-size: 3vw;
             }
         }
         .goPayment{

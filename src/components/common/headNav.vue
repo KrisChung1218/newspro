@@ -68,6 +68,6 @@
         color: white !important;
     }
     .icon-fanhui2{
-        font-size: 25/@rem
+        font-size: 3vw;
     }
 </style>

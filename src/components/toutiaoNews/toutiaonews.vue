@@ -28,7 +28,7 @@
             }
         },
         created(){
-            this.$ajax.get('/api/toutiao/index',{
+            this.$ajax.get('http://v.juhe.cn/toutiao/index',{
                 params:{
                     key: '95aae9eeea9e263289e02359e55e83a8'
                 }
@@ -64,8 +64,8 @@
             justify-content: center;
         }
         .pic{
-            width: 18vw;
-            height: 13vw;
+            width: 20vw;
+            height: 14vw;
             margin-right: 3vw;
         }
         .con{
@@ -86,12 +86,12 @@
             text-overflow: ellipsis;
             color: #555;
             font-weight: normal;
-            font-size: 25/@rem;
+            font-size: 3.5vw;
         }
         p{
             width: 100%;
             color: #999;
-            font-size: 22/@rem;
+            font-size: 2.7vw;
         }
         p span{
             /*-padding: 0 25/@rem;*/

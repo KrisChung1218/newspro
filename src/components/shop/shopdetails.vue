@@ -98,9 +98,9 @@
 <style scoped lang="less">
     @rem:750/10rem;
     .mb{
-        margin-bottom: 0;
+        margin-bottom: 10vw;
         margin-top: 10vw;
-        height: 79%;
+        height: 100%;
     }
     .shopdedatils{
         padding: 22/@rem;
@@ -113,16 +113,16 @@
             margin: auto;
         }
         h3{
-            font-size: 4.5vw;
+            font-size: 4vw;
         }
         .money{
             color: red;
-            margin-top: 6vw;
+            margin-top: 2vw;
             .symbol{
-                font-size: 5vw;
+                font-size: 4vw;
             }
             .price{
-                font-size: 6vw;
+                font-size: 4vw;
             }
         }
         .courier{

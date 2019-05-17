@@ -148,7 +148,7 @@
                 this.cityname = this.citySelected;
                 this.adressisShow = false
                 // 获取天气预报接口数据
-                this.$ajax.get('api/weather/index',{
+                this.$ajax.get('http://v.juhe.cn/weather/index',{
                     params:{
                         "cityname": this.cityname,
                         "dtype": "",
@@ -194,7 +194,7 @@
             },
             ajaxWeatherInfo(){
                 // 获取天气预报接口数据
-                this.$ajax.get('api/weather/index',{
+                this.$ajax.get('http://v.juhe.cn/weather/index',{
                     params:{
                         "cityname": this.cityname,
                         "dtype": "",
@@ -259,7 +259,7 @@
             font-size: 28/@rem;
         }
         .location{
-            font-size: 2px ;
+            font-size:12px;
             color: #eee;
             text-shadow: 1px 1px 1px #555;
             -webkit-text-size-adjust: 100% ;

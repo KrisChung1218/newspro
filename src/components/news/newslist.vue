@@ -70,8 +70,8 @@
             justify-content: center;
         }
         .pic{
-            width: 18vw;
-            height: 13vw;
+            width: 20vw;
+            height: 14vw;
             margin-right: 3vw;
         }
         .con{
@@ -92,12 +92,12 @@
             text-overflow: ellipsis;
             color: #555;
             font-weight: normal;
-            font-size: 25/@rem;
+            font-size: 3.5vw;
         }
         p{
             width: 100%;
             color: #999;
-            font-size: 22/@rem;
+            font-size:3vw;
         }
         p span{
             /*-padding: 0 25/@rem;*/

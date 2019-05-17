@@ -47,12 +47,12 @@
 <style lang="less">
     @rem: 750/10rem;
     .mb {
-        margin-bottom: 130/@rem;
+       padding-bottom: 10vw;
         margin-top: 10vw;
     }
 
     .photoImgs {
-        padding: 40/@rem 40/@rem 0;
+        padding: 5vw 5vw 0;
         background: white;
         position: relative;
         img {

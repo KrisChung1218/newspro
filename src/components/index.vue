@@ -143,7 +143,7 @@
     @rem: 750/10rem;
     .high {
         .banner {
-            height: 60vw;
+            height: 50vw;
             background: #ddd;
         }
 

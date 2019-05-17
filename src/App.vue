@@ -123,7 +123,7 @@
             right: 0;
             margin: auto;
             height: 10.5vw;
-            line-height: 6vh;
+            line-height: 10.5vw;
             width: 100%;
             z-index: 999;
             background: linear-gradient(90deg,rgba(255,160,135,1),rgba(239,128,109,1),rgba(197,117,194,1));
@@ -140,7 +140,7 @@
         bottom: 0;
         left: 0;
         z-index: 9;
-        height: 17vw;
+        height: 13vw;
         background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), color-stop(50%, #d9d9d9), color-stop(50%, transparent));
         background-image: linear-gradient(180deg, #d9d9d9, #d9d9d9 50%, transparent 50%);
         background-size: 100% 1px;
@@ -164,7 +164,7 @@
 
         }
         .link .svg{
-            margin: 2vw auto 2px;
+            margin: 1vw auto 0;
             font-size: 6vw;
         }
 

@@ -57,7 +57,7 @@
         <div style="width: 75%;color: rgb(255, 255, 255);text-align: left;height: 60px;line-height: 1.3;font-size: 3.5vw;text-indent: 7vw;margin:5vw auto">
             tips:{{tips}}
         </div>
-        <van-picker style="position: fixed;bottom: 15vw;width: 100%;" v-if="this.adressisShow" :columns="columns" show-toolbar title="请选择城市" @change="onChange" @cancel="onCancel" @confirm="onConfirm"/>
+        <van-picker style="position: fixed;bottom: 13vw;width: 100%;" v-if="this.adressisShow" :columns="columns" show-toolbar title="请选择城市" @change="onChange" @cancel="onCancel" @confirm="onConfirm"/>
     </div>
 
 </template>
@@ -129,7 +129,8 @@
             this.ajaxWeatherInfo()
 
             //获取所有城市名列表
-            this.$ajax.get('http://47.100.249.59/newsproDatas/area.json').then((res) => {
+            this.$ajax.get('../../../static/area.json').then((res) => {
+                console.log(res.data.city)
                 for(var i of res.data.city){
                     if(i.text.includes('市')){
                         this.columns.push(i.text)
@@ -148,7 +149,7 @@
                 this.cityname = this.citySelected;
                 this.adressisShow = false
                 // 获取天气预报接口数据
-                this.$ajax.get('http://v.juhe.cn/weather/index',{
+                this.$ajax.get('/api/weather/index',{
                     params:{
                         "cityname": this.cityname,
                         "dtype": "",
@@ -194,7 +195,7 @@
             },
             ajaxWeatherInfo(){
                 // 获取天气预报接口数据
-                this.$ajax.get('http://v.juhe.cn/weather/index',{
+                this.$ajax.get('/api/weather/index',{
                     params:{
                         "cityname": this.cityname,
                         "dtype": "",
@@ -229,6 +230,8 @@
                         }
                     }
                 })
+
+
             }
         }
 

@@ -42,7 +42,7 @@
             this.date = date
             this.month = month
             // 调用数据接口
-            this.$ajax.get('http://api.juheapi.com/japi/toh',{
+            this.$ajax.get('/apii/japi/toh',{
                 params:{
                     key:'cf4b99e1afa080f2cc93d66114dde526',
                     v:'1.0',

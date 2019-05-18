@@ -28,7 +28,7 @@
             }
         },
         created(){
-            this.$ajax.get('http://v.juhe.cn/toutiao/index',{
+            this.$ajax.get('/api/toutiao/index',{
                 params:{
                     key: '95aae9eeea9e263289e02359e55e83a8'
                 }

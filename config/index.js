@@ -12,25 +12,26 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
 
-        // '/apii': {
-        //     target: 'http://api.juheapi.com', //源地址
-        //     changeOrigin: true, //改变源
-        //     pathRewrite: {
-        //         '^/apii': 'http://api.juheapi.com' //路径重写
-        //     }
-        // },
-        // '/api': {  //使用"/api"来代替"http://f.apiplus.c"
-        //     target: 'http://v.juhe.cn', //源地址
-        //     changeOrigin: true, //改变源
-        //     pathRewrite: {
-        //         '^/api': 'http://v.juhe.cn' //路径重写
-        //     }
-        // },
+        '/apii': {
+            target: 'http://api.juheapi.com', //源地址
+            changeOrigin: true, //改变源
+            pathRewrite: {
+                '^/apii': 'http://api.juheapi.com' //路径重写
+            }
+        },
+        '/api': {  //使用"/api"来代替"http://f.apiplus.c"
+            target: 'http://v.juhe.cn', //源地址
+            secure: false,
+            changeOrigin: true, //改变源
+            pathRewrite: {
+                '^/api': 'http://v.juhe.cn' //路径重写
+            }
+        },
 
     },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
+    host: '10.102.0.156', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,

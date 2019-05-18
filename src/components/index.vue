@@ -202,7 +202,7 @@
                 display: block;
                 text-align: center;
                 color: #000;
-                font-size: 28/@rem;
+                font-size: 3.5vw;
             }
             .center {
                 margin: auto;

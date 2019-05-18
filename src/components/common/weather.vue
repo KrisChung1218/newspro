@@ -129,7 +129,7 @@
             this.ajaxWeatherInfo()
 
             //获取所有城市名列表
-            this.$ajax.get('../../../static/area.json').then((res) => {
+            this.$ajax.get('http://47.100.249.59/newsproDatas/area.json').then((res) => {
                 for(var i of res.data.city){
                     if(i.text.includes('市')){
                         this.columns.push(i.text)

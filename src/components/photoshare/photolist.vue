@@ -7,7 +7,7 @@
         <div class="tabCon">
             <div class="conList" :class="'show'">
                 <ul>
-                    <li v-for="(item) in womanStar" :key="item.id">
+                    <li v-for="(item) in womanStar" >
                         <router-link :to="{name:'photo.details',query:{id:item.id,title:item.tip}}">
                             <div class="pic ">
                                 <img :src="item.picUrl" v-lazy="item.picUrl" alt="" width="100%" height="100%">
@@ -19,9 +19,9 @@
                     </li>
                 </ul>
             </div>
-            <div class="conList">
+            <div class="conList" :class="'show'">
                 <ul>
-                    <li v-for="(item) in manStar" :key="item.id">
+                    <li v-for="(item) in manStar"  >
                         <router-link :to="{name:'photo.details',query:{id:item.id,title:item.tip}}">
                             <div class="pic ">
                                 <img :src="item.picUrl" v-lazy="item.picUrl" alt="" width="100%" height="100%">
@@ -33,9 +33,9 @@
                     </li>
                 </ul>
             </div>
-            <div class="conList">
+            <div class="conList" :class="'show'">
                 <ul>
-                    <li v-for="(item) in NBAStar" :key="item.id">
+                    <li v-for="(item) in NBAStar" >
                         <router-link :to="{name:'photo.details',query:{id:item.id,title:item.tip}}">
                             <div class="pic ">
                                 <img :src="item.picUrl" v-lazy="item.picUrl" alt="" width="100%" height="100%">
@@ -89,7 +89,7 @@
             getImgs(title){
                 if(title == 'nav1'){
                     // 请求女明星数据列表
-
+                    this.womanStar = []
                     this.$ajax.get('http://47.100.249.59/newsproDatas/womanStarList.php')
                         .then((res) => {
                             console.log(res.data)
@@ -98,9 +98,11 @@
                             }
                             this.manStar = []
                             this.NBAStar = []
+                            this.tabActive();
                         })
                 }else if(title == 'nav2'){
                     // 请求男明星数据列表
+                    this.manStar = []
                     this.$ajax.get('http://47.100.249.59/newsproDatas/manStarList.php')
                         .then((res) => {
                             for(var i in res.data){
@@ -108,10 +110,11 @@
                             }
                             this.womanStar = []
                             this.NBAStar = []
+                            this.tabActive();
                         })
                 }else if(title == 'nav3'){
                     // 请求NBA球星数据列表
-
+                    this.NBAStar = []
                     this.$ajax.get('http://47.100.249.59/newsproDatas/NBAStarList.php')
                         .then((res) => {
                             for(var i in res.data){
@@ -119,9 +122,10 @@
                             }
                             this.womanStar = []
                             this.manStar = []
+                            this.tabActive();
                         })
                 }
-                this.tabActive();
+
             },
 
             tabActive(){

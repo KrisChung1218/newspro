@@ -67,7 +67,7 @@
             let title = this.$route.query.title || 'likeYou';
             idArr.forEach((item,index)=>{
                 // 遍历商品序号查找商品数据并加入到shopList数组中
-                this.$ajax.get('http://47.100.249.59/newsproDatas/shopDetails.php')
+                this.$ajax.get('hhttp://47.100.249.59/newsproDatas/shopDetails.php')
                     .then((res) => {
                         // 遍历所有商品序号查找被加入购物车的商品
                         for(var i in res.data){

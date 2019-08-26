@@ -194,8 +194,47 @@
                 this.adressisShow = true
             },
             ajaxWeatherInfo(){
+                // // 获取天气预报接口数据
+                // this.$ajax.get('/api/weather/index',{
+                //     params:{
+                //         "cityname": this.cityname,
+                //         "dtype": "",
+                //         "format": "2",
+                //         "key": "c2c2a7e911d13ea33cd2456ff3a6fb3f"
+                //     }
+                // }).then((res) => {
+                //     this.f1 = res.data.result.future[0]
+                //     this.f2= res.data.result.future[1]
+                //     this.f3 = res.data.result.future[2]
+                //     this.humidity = res.data.result.sk.humidity
+                //     this.tips = res.data.result.today.dressing_advice
+                //     for(var i=0;i<3;i++){
+                //         if(res.data.result.future[i].weather == '多云'){
+                //             this.fimg[i] = this.images[0]
+                //         }else if(res.data.result.future[i].weather.includes('雷')){
+                //             this.fimg[i] = this.images[1]
+                //         }else if(res.data.result.future[i].weather.includes('晴')){
+                //             this.fimg[i] = this.images[2]
+                //         }else if(res.data.result.future[i].weather.includes('雾')){
+                //             this.fimg[i] = this.images[3]
+                //         }else if(res.data.result.future[i].weather.includes('雪')){
+                //             this.fimg[i] = this.images[4]
+                //         }else if(res.data.result.future[i].weather.includes('阴')){
+                //             this.fimg[i] = this.images[5]
+                //         }else if(res.data.result.future[i].weather.includes('雨夹雪')){
+                //             this.fimg[i] = this.images[6]
+                //         }else if(res.data.result.future[i].weather.includes('雨') && res.data.result.future[0].weather.indexOf('雷') == -1){
+                //             this.fimg[i] = this.images[7]
+                //         }else{
+                //             this.fimg[i] = this.images[5]
+                //         }
+                //     }
+                // })
+
+
+
                 // 获取天气预报接口数据
-                this.$ajax.get('/api/weather/index',{
+                this.$ajax.get('http://v.juhe.cn/weather/index',{
                     params:{
                         "cityname": this.cityname,
                         "dtype": "",
@@ -230,6 +269,7 @@
                         }
                     }
                 })
+
 
 
             }

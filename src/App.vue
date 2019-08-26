@@ -7,7 +7,7 @@
 
         <!--footNav-->
         <footer class="ft">
-            <router-link class="link"  :to="{name:'index'}">
+            <router-link class="link" id="indexDefault" :to="{name:'index'}">
                 <div class="svg iconfont icon-shouye"></div>
                 <p>首页</p>
             </router-link>
@@ -37,6 +37,7 @@
     import connect from './components/common/connect'
     import shopTools from './components/common/shopTools'
     import { MessageBox } from 'mint-ui';
+    import Index from './components/index'
 
     export default {
         data(){
@@ -90,8 +91,14 @@
                         showCancelButton: true
                     });
                 });
-    }
+            }
+        },
+
+        component: {
+            Index: Index
         }
+
+
     }
 </script>
 

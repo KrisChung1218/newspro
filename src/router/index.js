@@ -73,7 +73,7 @@ export default new Router({
             redirect:{name:'index'}
         },
         {
-            path: '/ ',
+            path: '/index',
             name: 'index',
             component: Index
         },

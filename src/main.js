@@ -8,6 +8,9 @@ import router from './router'
 import '../static/css/global.css';
 import '../static/fonts/iconfont';
 
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
+
 
 Vue.config.productionTip = false;
 

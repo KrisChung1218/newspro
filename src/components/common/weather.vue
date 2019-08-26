@@ -231,10 +231,8 @@
                 //     }
                 // })
 
-
-
                 // 获取天气预报接口数据
-                this.$ajax.get('http://v.juhe.cn/weather/index',{
+                this.$ajax.get('/api/weather/index',{
                     params:{
                         "cityname": this.cityname,
                         "dtype": "",
@@ -269,7 +267,6 @@
                         }
                     }
                 })
-
 
 
             }

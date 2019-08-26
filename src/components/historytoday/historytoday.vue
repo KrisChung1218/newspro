@@ -11,7 +11,7 @@
             </div>
             <div class="content">
                 <div class="img" v-if="item.pic">
-                    <img :src="item.pic" alt="" style="border-radius: 10px;">
+                    <img :src="item.pic" alt="" style="border-radius: 10px;" v-lazy="item.pic">
                 </div>
                 <div class="time">
                     <span style="float: left;margin-left: 1vw;">{{item.lunar}}</span>
@@ -21,6 +21,7 @@
                     {{item.des}}
                 </div>
             </div>
+          
         </div>
 
     </div>

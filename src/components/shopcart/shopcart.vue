@@ -64,15 +64,16 @@
             let shop = shopTools.getShop();
             // 将缓存数据键值对存在一个数组内(用户加入购物车的商品序号)
             let idArr = Object.keys(shop);
-            let title = this.$route.query.title || 'likeYou';
+
             idArr.forEach((item,index)=>{
                 // 遍历商品序号查找商品数据并加入到shopList数组中
-                this.$ajax.get('hhttp://47.100.249.59/newsproDatas/shopDetails.php')
+                this.$ajax.get('http://47.100.249.59/newsproDatas/shopDetails.php')
                     .then((res) => {
                         // 遍历所有商品序号查找被加入购物车的商品
                         for(var i in res.data){
                             if(res.data[i].id == item){
                                 // 初始化本地缓存中用户选定的商品件数为购物车初始件数
+                                console.log(res.data[i])
                                 res.data[i].num = shop[item]
                                 this.shopList.push(res.data[i])
                             }

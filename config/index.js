@@ -27,6 +27,14 @@ module.exports = {
                 '^/api': 'http://v.juhe.cn' //路径重写
             }
         },
+        '/myApi': {
+            target: 'http://47.100.249.59', //源地址
+            secure: false,
+            changeOrigin: true, //改变源
+            pathRewrite: {
+                '^/myApi': 'http://47.100.249.59' //路径重写
+            }
+        },
 
     },
 

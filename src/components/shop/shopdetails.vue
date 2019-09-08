@@ -49,18 +49,12 @@
             let index = this.$route.query.id;
             if(index){
                 //如果参数id存在,即用户点击了商品列表中的商品,则请求数据
-                let title = this.$route.query.title;
-                // this.$ajax.get( this.dataURL('vue.php',title,index) )
-                //     .then((res)=>{
-                //         res.data['id'] = index;  //方便把商品加入到购物车,根据id
-                //         this.newsDetails = res.data;
-                //     })
                 this.$ajax.get('http://47.100.249.59/newsproDatas/shopDetails.php')
                     .then((res) => {
                         for(var i in res.data){
                             if(res.data[i].id == index){
-                                res.data[i].num = index
                                 this.newsDetails = res.data[i]
+                                console.log(this.newsDetails)
                             }
                         }
                     })

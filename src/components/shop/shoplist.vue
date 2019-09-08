@@ -32,10 +32,6 @@
         mounted(){},
         created(){
             // 请求数据
-            // this.$ajax.get( this.dataURL('vue.php','likeYou') )
-            //     .then((res)=>{
-            //         this.shopList = res.data;
-            //     })
             this.$ajax.get('http://47.100.249.59/newsproDatas/shopList.php')
                 .then((res) => {
                     for(var i in res.data){
